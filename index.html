@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Madame Lumina's Fortune Machine</title>
+    <meta
+      name="description"
+      content="Drop a quarter into Madame Lumina's fortune machine and receive a message from the light. A Purple Light Lounge Mystic Carnival experience."
+    />
+    <meta name="theme-color" content="#110820" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Madame Lumina's Fortune Machine" />
+    <meta
+      property="og:description"
+      content="Drop in a quarter. She'll tell you what the light wants you to know."
+    />
+    <meta property="og:image" content="assets/seer.jpg" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <span class="eyebrow">Purple Light Lounge · Mystic Carnival</span>
+        <h1>Madame Lumina</h1>
+        <p class="sub">Drop in a quarter. She'll tell you what the light wants you to know.</p>
+      </header>
+
+      <div class="stage-box" id="stageBox">
+        <div class="stage" id="stage" aria-label="Fortune machine. Drag to turn it.">
+          <div class="floor"></div>
+          <div class="glowfloor"></div>
+          <div class="cab" id="cab">
+            <div class="face back woody"></div>
+            <div class="face side left woody">
+              <div class="inset"></div>
+              <div class="moon"></div>
+              <div class="stars">✦ ✧ ✦</div>
+              <div class="lower"></div>
+            </div>
+            <div class="face side right woody">
+              <div class="inset"></div>
+              <div class="moon"></div>
+              <div class="stars">✦ ✧ ✦</div>
+              <div class="lower"></div>
+            </div>
+            <div class="face top woody"></div>
+            <div class="face bottom"></div>
+            <div class="crown" id="crown">
+              <div class="arch"></div>
+              <div class="cap"></div>
+              <div class="medal">
+                <svg viewBox="0 0 64 40" aria-hidden="true">
+                  <g stroke="#e5c47a" stroke-width="2">
+                    <path d="M32 6 C26 14 26 24 32 32 C38 24 38 14 32 6Z" fill="#b48af0" />
+                    <path d="M32 32 C24 30 16 24 14 14 C22 16 28 22 32 32Z" fill="#8a56d6" />
+                    <path d="M32 32 C40 30 48 24 50 14 C42 16 36 22 32 32Z" fill="#8a56d6" />
+                    <path d="M32 32 C22 34 10 32 4 26 C14 24 24 26 32 32Z" fill="#6633b0" />
+                    <path d="M32 32 C42 34 54 32 60 26 C50 24 40 26 32 32Z" fill="#6633b0" />
+                  </g>
+                </svg>
+              </div>
+              <div class="words"><span>Fortunes</span><span>25¢</span></div>
+            </div>
+            <div class="face front" id="front">
+              <div class="pil l" id="pilL"></div>
+              <div class="pil r" id="pilR"></div>
+              <div class="body">
+                <div class="plaque"><span>Madame Lumina</span><i class="rivet"></i><i class="rivet"></i></div>
+                <div class="window" id="win">
+                  <div class="inner">
+                    <div
+                      class="seer"
+                      id="seer"
+                      role="img"
+                      aria-label="Madame Lumina, a veiled fortune teller with a glowing crystal ball"
+                    >
+                      <img id="seerImg" src="assets/seer.jpg" width="896" height="1120" alt="" /><span
+                        class="eye"
+                        id="eyeL"
+                      ></span
+                      ><span class="eye" id="eyeR"></span><span class="orb" id="orb"></span
+                      ><span class="haze"></span>
+                    </div>
+                    <div class="spot"></div>
+                    <div class="glass"></div>
+                  </div>
+                </div>
+                <div class="deck">
+                  <div class="sign" id="sign" aria-live="polite">Insert a quarter to awaken the seer</div>
+                  <div class="controls">
+                    <div class="coinplate">
+                      <span class="eng">Insert<br />Quarter</span>
+                      <div class="row">
+                        <div class="coinslot hot" id="slot"></div>
+                        <span class="reject" title="Coin return"></span>
+                      </div>
+                      <span class="eng">25¢</span>
+                    </div>
+                    <div class="chute">
+                      <span class="eng">Your Fortune</span>
+                      <div class="mouth">
+                        <div class="cardout" id="cardout">
+                          <button id="takeCard" tabindex="-1">
+                            ✦<br />Tap to<br />read your<br />fortune
+                          </button>
+                        </div>
+                      </div>
+                      <span class="eng eng-small">Est. Lake Geneva</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="kick">
+                  <i class="corner l"></i>
+                  <div class="grille"></div>
+                  <i class="corner r"></i>
+                </div>
+              </div>
+              <i class="foot l"></i><i class="foot r"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tray">
+        <div class="row">
+          <button
+            class="coin"
+            id="coin"
+            aria-label="Quarter. Drag it into the coin slot, or press to insert it."
+          >
+            25¢<br />✦
+          </button>
+          <button class="btn" id="spin" type="button">Turn the machine</button>
+        </div>
+        <p id="trayMsg">Drag the quarter into the slot. Drag the machine to walk around it.</p>
+        <span class="hint">Sound on for the full carnival effect.</span>
+      </div>
+
+      <footer>
+        A playful reflection, not a prediction. Take what resonates. ·
+        <a
+          href="https://www.skool.com/purple-light-lounge-6229/about?ref=39f9b95e06a4444aa7ff6d4e9c530e9f"
+          target="_blank"
+          rel="noopener"
+          >Join the Purple Light Lounge</a
+        >
+      </footer>
+    </div>
+
+    <div class="veil" id="veil" hidden>
+      <div class="veil-inner">
+        <div class="fcard">
+          <div class="fcard-in">
+            <div class="fside fback">
+              <svg viewBox="0 0 64 40" aria-hidden="true">
+                <g stroke="#d9b25f" stroke-width="1.5">
+                  <path d="M32 6 C26 14 26 24 32 32 C38 24 38 14 32 6Z" fill="#a674e8" />
+                  <path d="M32 32 C24 30 16 24 14 14 C22 16 28 22 32 32Z" fill="#7d48c9" />
+                  <path d="M32 32 C40 30 48 24 50 14 C42 16 36 22 32 32Z" fill="#7d48c9" />
+                </g>
+              </svg>
+            </div>
+            <div class="fside ffront">
+              <span class="k">Madame Lumina speaks</span>
+              <span class="no" id="fNo">No. 07</span>
+              <h2 id="fTitle">Title</h2>
+              <div class="rule"></div>
+              <p class="msg" id="fMsg">Message</p>
+              <div class="rule"></div>
+              <div class="meta">
+                <span>Lucky color <b id="fColor"></b></span><span>Lucky number <b id="fNum"></b></span>
+              </div>
+              <span class="sig">Take what resonates. ✦ Purple Light Lounge</span>
+            </div>
+          </div>
+        </div>
+        <div class="acts">
+          <button class="btn" id="again" type="button">Another quarter</button>
+          <button class="btn" id="close" type="button">Close</button>
+        </div>
+      </div>
+    </div>
+    <script src="js/fortunes.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
