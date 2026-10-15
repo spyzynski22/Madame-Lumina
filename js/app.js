@@ -72,6 +72,7 @@
   let rotX = -4;
   let lastInteraction = 0;
   let lastFortune = -1;
+  let lastColor = -1;
 
   const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   const randomInt = (max) => Math.floor(Math.random() * max);
@@ -370,13 +371,18 @@
     }
   }
 
-  function pickFortune() {
-    if (FORTUNES.length < 2) return 0;
+  // Random index into a list of `length` items, never the same as `previous`
+  function pickDifferent(length, previous) {
+    if (length < 2) return 0;
     let i;
-    do i = randomInt(FORTUNES.length);
-    while (i === lastFortune);
-    lastFortune = i;
+    do i = randomInt(length);
+    while (i === previous);
     return i;
+  }
+
+  function pickFortune() {
+    lastFortune = pickDifferent(FORTUNES.length, lastFortune);
+    return lastFortune;
   }
 
   function fillCard(index) {
@@ -384,7 +390,8 @@
     el.fNo.textContent = `No. ${String(index + 1).padStart(2, "0")}`;
     el.fTitle.textContent = title;
     el.fMsg.textContent = message;
-    el.fColor.textContent = COLORS[randomInt(COLORS.length)];
+    lastColor = pickDifferent(COLORS.length, lastColor);
+    el.fColor.textContent = COLORS[lastColor];
     el.fNum.textContent = 1 + randomInt(MAX_LUCKY_NUMBER);
   }
 
